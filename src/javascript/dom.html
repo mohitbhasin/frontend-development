@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Working with DOM</title>
+		<script src="dom.js"></script>
+	</head>
+	<body>
+		<h1>Accessing DOM Elements</h1>
+		<p>Paragraph text here. elements can be accessed by id, classname, tag (p, h1, a etc), querySelector (css selector)</p>
+		<p>getElementsByTagName return a list of all the elements of a tag</p>
+		
+		<!-- get elements by tag 'p' and display its count -->
+		<button onclick="popup()">Alert - count &ltp&gt tags</button>
+		
+		<!-- Create element using function which appends child element -->
+		
+		<button onclick="createElements(this)" >Create &ltP&gt Element</button>
+		<div id="newParaElementDiv"></div>
+		
+		<!-- toggle element creation -->
+		<button onclick="togglePara()">Toggle element creation</button>
+		<div id="toggle-para-div"></div>
+		
+		<!-- get elemets by class -->
+		<h3>Fruits</h3>
+		<ul class="items-list">
+			<li>Orange</li>
+			<li>Banana</li>
+			<li>Mango</li>
+			<li>Cranberries</li>
+		</ul>
+		<h3>Vegetables</h3>
+		<ol class="items-list">
+			<li>Tomato</li>
+			<li>Broccoli</li>
+			<li>Zucchini</li>
+			<li>Spinach</li>
+		</ol>
+		<p>Get elements by classname (items-list): <span id="count-items">0</span></p>
+
+		<!-- Query selector returns first element that matches -->
+		<label for="selectorOperations" id="selectorLable">Enable querySelector operations (Hover after enabling)</label>
+		<input type="checkbox" id="selectorOperations" onchange="enableQuerySelector()" autocomplete="off">
+		<p name='paraReverse'>QuerySelector by attribute uses element and property like so: 'p[name="paraReverse"]'</p> 
+		
+		<p><u><i>(Keep toggling the checkbox to set random colors for class=querySelectorAll)</i></u></p>
+		<p class=querySelectAll>CSS selector - querySelectorAll(): &ltp&gt with class=querySelectAll</p>
+		<h3 class=querySelectAll>CSS selector - querySelectorAll(): &ltH3&gt with class=querySelectAll</h3>
+		<div class=querySelectAll>
+			<p>CSS selector - querySelectorAll(): &ltOL&gt(ordered) with class=querySelectAll</p>
+			<ol>
+				<li>Cat</li>
+				<li>Dog</li>
+				<li>Squirrel</li>
+				<li>Chipmunk</li>
+				<li>Monkey</li>
+			</ol>
+		</div>
+
+		<h2>Modifying Attributes - setAttribute or removeAttribute</h2>
+		<p onmouseenter="modify(this)" onmouseleave="reset(this)">Hovering and clicking allows to edit this paragraph. As soon as the mouse moves away, editing is disabled.</p>
+
+		<h2>Modifying content and styles</h2>
+		<p id=forTextContent>
+			some text for comparison 
+			<span style="display: none;"> --secret--</span>
+			<span style="text-transform: uppercase;">upper case</span>
+		</p>
+		<div id="textContentDiv">textContent property gets raw data -></div>
+		<div id="innerTextDiv">innerText property ignores hidden text but respects CSS styling-> </div>
+
+		<!-- Working with classes -->
+		<img src="assets/DOM_Inheritance_Hierarchy.svg"width="500" height="600">
+		<h2>Working with classes</h2>
+		<ul>
+			<li>Every element p, h, div are javascript objects.</li>
+			<li>They belong to HTMLElement family.</li>
+			<li>All elements inherit a property called classList.</li>
+			<li>classList property returns DOMTokenList, which contains .toggle(), .add(), .remove() etc</li>
+		</ul>
+
+		<H3 id="classHeading">ClassList for this text includes:</H3>
+		<div id="contentBox" class="container"></div>
+		<input type="text" id="classInput" placeHolder="Type classname to add">
+		<button onclick="addCard()">Add new class (limit=3)</button>
+
+		<input type="text" id="searchClass" placeHolder="Classname to search">
+		<button onclick="checkClass()">Search</button>	
+		<div name="mohit" id="searchResult"></div>
+
+		<div>
+			<h3>clasList.toggle automatically assigns or reamoves a class</h3>
+			<style type="text/css">
+				.italics {
+					font-style: italic;
+				}
+			</style>
+			<p id="classListPara">A class to toggle can be picked up from css or &ltstyle&gt. Common use cases include setting dark-mode class on the &ltbody&gt, expandind or collapsing menus.</p>
+			<button onclick="toggleItalic()">Toggle Italics</button>	
+		</div>
+		
+
+		<!--  DOM properties like innerHTML, textContent, Style -->
+		<h3>Commonly used DOM properties: innerHTML, textContent, style</h3>
+		<p>Click the list of properties to see their effects</p>
+		<ul>
+			<li onclick="innerHtmlEffect(this)">innerHTML: use it to get or set entire HTML content (use cautiously).</li>
+			<li onclick="textContentEffect(this)">textContent: gets or sets text content without affecting HTML.</li>
+			<li onclick="styleEffect(this)">style: accesses inline style of an element.</li>
+		</ul>
+		<hr>
+		<p><a href="index.html">← Back to Home</a></p>
+	</body>
+</html>
