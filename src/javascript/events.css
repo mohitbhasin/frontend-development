@@ -1,0 +1,13 @@
+.eventPropsContainer {
+	display: flex;
+	gap: 20px;
+}
+
+.eventList li:hover {
+	background-color: gray;
+}
+
+.displayBox {
+	width: 300px;
+  	background-color: lightblue;
+}

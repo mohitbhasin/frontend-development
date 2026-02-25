@@ -2,11 +2,59 @@
 <html>
 	<head>
 	    <title>Working with Events</title>
+	    <link rel="stylesheet" href="events.css">
 	</head>
 	<body>
 		<h2>Working with Events</h2>
 
+		<p>Event listtener can be added to an element by element.addEventListener('event-to track', function. It takes an argument "the event" and a function that describes what to do when that event happens.</p>
+
+		<button>Click to log the event</button>
+
+		<p>Handling user  keydown input. Other inputs that can be handled are mouseover, click, keydown and keyup.</p>
+		<p>Input keys to log.</p>
+		<input type="text" placeholder="keyDown">
+
+		<h3>Event Delegation</h3>
+		<p>Event listener can be used to track events of children elements. It relies on Event Bubbling. When an event happens it travels up the DOM tree to parent, grandparent and so on until document object.</p>
+
+		<ul>
+			<li>Square</li>
+			<li>Circle</li>
+			<li>Triangle</li>
+			<li>Rectangle</li>
+		</ul>
+
+		<h3>Event object's important properties include:</h3>
+		<div class="eventPropsContainer">
+			<ul class="eventList">
+				<li><b>target</b>: Element where the event started</li>
+				<li><b>currentTarget</b>: Owner element where the listener is attached</li>
+				<li><b>type</b>: type of event - 'click', 'submit', 'keydown' or 'mouseover'</li>
+				<li><b>bubbles</b>: Boolean indicating if an event bubbles up to DOM</li>
+				<li><b>timeStamp</b>: time elapesed (in miliseconds) after page loading and the event to happen</li>
+			</ul>
+			
+			<div class="displayBox">Click an item from the list</div>
+		</div>
+
+		<h3>Bubbling and Capturing</h3>
+		
+		<p><b>Bubbling: </b>Events bubbles up from child to parent, which is the default behavor. Here there are two eventListeners one for each child and parent. When child event occurrs, it bubbles up and calls parent event.</p>
+		<div id="parent", class="eventPropsContainer">Parent element
+			<button id="child">Child Element</button>
+			<div id="bubbleDisplay" class="displayBox"></div>
+		</div>
+		
+		<p><b>Capturing: </b>Event captureing goes from parent to child. The event starts from window -> document -> html -> body -> div(parent) -> button(child).</p>
+		<div id="parent2", class="eventPropsContainer">Parent element
+			<button id="child2">Child Element</button>
+			<div id="captureDisplay" class="displayBox"></div>
+		</div>
+
 		<hr>
+
 		<p><a href="index.html">← Back to Home</a></p>
+		<script src="events.js"></script>
 	</body>
 </html>

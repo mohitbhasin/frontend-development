@@ -130,7 +130,7 @@ function toggleItalic() {
 }
 
 function innerHtmlEffect(item) {
-	item.innerHTML = '<B>Dynamic HTML content using innerHTML<B>';
+	item.innerHTML = '<button>Button added using innerHTML</button>';
 }
 
 function textContentEffect(item) {
