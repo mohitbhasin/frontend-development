@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic DOM Management</title>
+	<link rel="stylesheet" href="dynamic-dom.css">
+</head>
+<body>
+	<h2>Dynamically managing DOM elements</h2>
+	<h3>Append vs Append Child</h3>
+	<p>append() can be used to add an element in Node object form. Or add a DOMString (text).</p>
+	<p>.append() accepts multiple argument.</p>
+	<pre style="background-color: lightgray;"><code>// append(Node_object) for parent &ltul&gt.append(&ltli&gt) converts to:<br>// &ltul&gt&ltli&gt...&lt/li&gt&lt/ul&gt<br><br>// append(String) for parent &ltul&gt.append("Banana") converts to:<br>// &ltul&gtBanana&gt&lt/ul&gt
+	</code></pre>
+	<div>
+		<ul class="parentUL">Items:
+			
+		</ul>
+		<div style="display: flex; gap: 20px">
+			<input type="text" placeholder="type here" id="appendInput">
+			<button id="appendElementButton">append element</button>
+			<button id="appendStringButton">append DOMString</button>
+			<button id="appendChildButton">append Child</button>
+		</div>
+	</div>
+
+	<p>appendChild() accepts single argument of type Node object.</p>
+	<p style="font-weight: bold; font-style: italic;">Similarly, there are remove() and removeChild() methods to remove objects and DOMString.</p>
+
+	<h3>Cloning and Replacing Nodes</h3>
+	<p class="paraToClone">cloneNode() method allows to create a copy of an element.</p>
+	<p>replaceChild() method replaces existing node with a new one.</p>
+	<div style="display: flex; align-items: center; gap: 20px" class="cloneParaDiv">
+		<button class="cloningButton">Clone (Step 1)</button>
+		<button class="replaceButton">Replace (Step 2)</button>
+	</div>
+	<p style="font-style: italic;">Using querySelector() within div object (not on document.querySelector()) to find the cloned para and repalcing it with the new one.</p>
+
+	<h3>Inserting element before another</h3>
+	<p>Prioritize Tasks</p>
+	<div id="forNextSiblingDiv">
+		<ul class="priority-list">
+			<li id="design">Design</li>
+			<li id="implement">Implement</li>
+			<li id="test">Test</li>
+			<li id="deploy">Deploy</li>
+		</ul>
+	</div>
+	
+	<div style="display: flex; gap: 10px">
+		<input type="text" id="taskInput" placeholder="Insert item (eg. PoC)">
+		<button id="firstChildButton">Insert Before: first child</button>
+		<button id="nextSiblingButton">Insert Before: next sibling</button>
+	</div>
+
+	<hr>
+	<p><a href="index.html">← Back to Home</a></p>
+	<script src="dynamic-dom.js"></script>
+</body>
+</html>
