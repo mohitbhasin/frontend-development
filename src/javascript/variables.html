@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables in JS</title>
+    </head>
+    <body>
+        <h1>Variables and Data Types</h1>
+        <p><b>var:</b>Allows reassignment and redecleration. Very flexible and error prone.</p>
+        <p><b>let:</b>Block specific. Can only be redeclared outside of the block. what about nested.</p>
+        <p><b>const:</b>Also block specific. Can't be reassigned or redeclared. Can only be redeclared in another or nested block.</p>
+        
+        <div class="variablesDiv">
+            <h3>var</h3>
+            <ul>
+                <li>Function scoped.</li>
+                <li>Can be reassinged and redeclared anywhere.</li>
+                <li>Declared in if, can be leaked out and accessed outside of it.</li>
+            </ul>
+            <pre id="var-code-block" style="background: lightgray; padding: 10px;"></pre>
+            <h3>let</h3>
+            <ul>
+                <li>Block scoped.</li>
+                <li>Can be reassigned but can't be redeclared.</li>
+                <li>Can be declared in different or nested block.</li>
+            </ul>
+            <pre id="let-code-block" style="background: lightgray; padding: 10px;"></pre>
+            <h3>const</h3>
+            <ul>
+                <li>Block scoped as well.</li>
+                <li>Must be initiaized.</li>
+                <li>Can't be reassigned or redeclared.</li>
+                <li>Like let, const can be declared in different or nested block.</li>
+            </ul>
+            <pre id="const-code-block" style="background: lightgray; padding: 10px;"></pre>
+        </div>
+
+        <hr>
+        <p><a href="index.html">← Back to Home</a></p>
+        <script src="variables.js"></script>
+    </body>
+</html>
