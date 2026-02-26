@@ -36,7 +36,7 @@ const cloningBtn = document.querySelector(".cloningButton");
 const div = document.querySelector(".cloneParaDiv");
 cloningBtn.addEventListener(("click"), () => {
 	const para = document.querySelector(".paraToClone");
-	const clone = para.cloneNode(para);
+	const clone = para.cloneNode(true);
 	div.appendChild(clone);
 });
 

@@ -25,9 +25,11 @@
 
 	<p>appendChild() accepts single argument of type Node object.</p>
 	<p style="font-weight: bold; font-style: italic;">Similarly, there are remove() and removeChild() methods to remove objects and DOMString.</p>
+	<p style="font-style: italic;">remove(node) is precise and doesn't care about the parent.</p>
+	<p style="font-style: italic;">removeChild(child node) requires the parent of the node to be removed.</p>
 
 	<h3>Cloning and Replacing Nodes</h3>
-	<p class="paraToClone">cloneNode() method allows to create a copy of an element.</p>
+	<p class="paraToClone">cloneNode(true/false) method allows to create a copy of an element. True returns deep copy and False returns shallow copy.</p>
 	<p>replaceChild() method replaces existing node with a new one.</p>
 	<div style="display: flex; align-items: center; gap: 20px" class="cloneParaDiv">
 		<button class="cloningButton">Clone (Step 1)</button>
@@ -35,7 +37,9 @@
 	</div>
 	<p style="font-style: italic;">Using querySelector() within div object (not on document.querySelector()) to find the cloned para and repalcing it with the new one.</p>
 
-	<h3>Inserting element before another</h3>
+	<h3>insertBefore()</h3>
+	<p style="font-style: italic;">Syntax: parentElement.insertBefore(newNode, childNode)</p>
+	<p>To add the new node as the first item, use parent.firstChild. To add after a specific child, use child.nextSibling.</p>
 	<p>Prioritize Tasks</p>
 	<div id="forNextSiblingDiv">
 		<ul class="priority-list">
@@ -49,7 +53,7 @@
 	<div style="display: flex; gap: 10px">
 		<input type="text" id="taskInput" placeholder="Insert item (eg. PoC)">
 		<button id="firstChildButton">Insert Before: first child</button>
-		<button id="nextSiblingButton">Insert Before: next sibling</button>
+		<button id="nextSiblingButton">Insert Before: next sibling (Implement)</button>
 	</div>
 
 	<hr>
