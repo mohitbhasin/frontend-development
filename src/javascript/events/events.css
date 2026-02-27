@@ -4,10 +4,11 @@
 }
 
 .eventList li:hover {
-	background-color: gray;
+	background-color: lightgray;
 }
 
 .displayBox {
 	width: 300px;
   	background-color: lightblue;
+	padding: 10px;
 }
