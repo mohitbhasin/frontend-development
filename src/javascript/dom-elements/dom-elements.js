@@ -109,6 +109,12 @@ function addCard() {
 	}
 }
 
+const promptButton = document.querySelector("#promptButton");
+promptButton.addEventListener("click", () => {
+	let name = prompt("Enter your name!!");
+	alert("Hello "+name+"! How are you doing today!");
+});
+
 function checkClass() {
 	const heading = document.getElementById("classHeading");
 	const searchBox = document.getElementById("searchClass");
