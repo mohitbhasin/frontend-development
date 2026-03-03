@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with forms</title>
+    </head>
+    <body>
+        <h2>Interacting with forms</h2>
+        <h3>Common form elements</h3>
+        <p><b>&ltinput&gt:</b> support various fields with types include text, password, checkbox, email, date, radio, submit</p>
+        <p><b>&lttextarea&gt:</b> allows text for longer and multiline input.</p>
+        <p><b>&ltselect&gt:</b> dropdown with a list of options.</p>
+        <p><b>&ltbutton&gt:</b> clickable button that can trigger custom js functions, or used to submit/reset a form.</p>
+        <p><b>&ltlabel&gt:</b> text caption that can be associated with specific form control</p>
+        
+        <form action="./" method="POST">
+            <label style="font-weight: bold;">Sample form</label><br><br>
+            <label>Name:</label>
+            <input type="text" id="name" required><br><br>
+            <lable>Favorite fruit:</lable>
+            <input type="text" id="favFruit" required><br><br>
+            <input type="submit" value="Input - Submit">
+            <button type="submit">Button - Submit</button><br><br>
+            <label id="preventSubmitText"></label>
+            <p>(preventDefault() applied on an event will stop the default action associated with it)</p>
+        </form>
+
+        <p><b>Dynamically add to dropdown list</b></p>
+        <label for="inputPeripherals">Input Devices</label>
+        <select id="inputPeripherals" name="peripheralsList">
+            <option>Mouse</option>
+            <option>Keyboard</option>
+            <option>Trackpad</option>
+            <option>Game Controller</option>
+            <option>Mic</option>
+        </select>
+        <br><br>
+        <input type="text" name="deviceInput" placeholder="New device">
+        <button name="addDeviceButton">Add Device</button>
+
+
+        <hr>
+		<p><a href="../index.html">← Back to Home</a></p>
+	
+		<script src="form-interaction.js"></script>
+    </body>
+</html>
