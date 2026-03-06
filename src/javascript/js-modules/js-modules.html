@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modules in javascript</title>
+    </head>
+    <body>
+        <h1>Modules in javascript</h1>
+        <p>Module organizes code in reusable files, preventing naming conflicts and easier maintenance. It uses ES(ECMAScript) Modules, which uses import and expoert statement.</p>
+        <p>To use modules in html, you must specify script tag with type module and src to module's js file.</p>
+        <p style="color: red; font-style: italic;">(Modules must be served over http(s). Running locally using file:// protocol will throw CORS blocked error.)</p>
+
+        <h3>Module Scope</h3>
+        <p>Variables and functions inside a module are inaccessable outside, unless explicitly exported.</p>
+
+        <h3>Import/Export</h3>
+        <p>Use export to expose variables, functions and classes to other files. Use import to use exposed functionalities of modules.</p>
+        <pre style="background-color: lightgray;"><code>export const PI = 3.141;<br>export function add(a, b) {<br>&nbsp;&nbsp;return a+b;<br>}</code></pre>
+        <pre style="background-color: lightgray;"><code>import {<br>&nbsp;&nbsp;PI, add<br>} from './sample-module.js';<br><br>//import as alias<br>import { add as sum } from './sample-module.js'<br><br>console.log(PI);<br>console.log(add(4,9));</code></pre>
+        
+        
+        <h3>Types of exports and imports</h3>
+        <p><i>(A module can have both named and default exports)</i></p>
+        <ul><b>Named exports:</b>
+            <li>Allows a module to export multiple variables, functions or classes using export before their decleration.</li>
+            <li>No limit on the number of exports that can be made.</li>
+            <li>Must use the exact name or 'as' to import named exports</li>
+            <li>Use curly braces - import { PI } from './module.js'</li>
+            <li>Purpose is to use with utility functions, constants and helper tools</li>
+        </ul>
+
+        <ul><b>Default exports:</b>
+            <li>Allows only one default export per module.</li>
+            <li>Can be imported with any name.</li>
+            <li>No curly braces required - import PI_VAL from './module.js'</li>
+            <li>Purpose is to export main thing that represents class or component.</li>
+        </ul>
+        
+        <pre style="background-color: lightgray;"><code>const subject = "Mathematics";<br>export default subject;<br></code></pre>
+        <pre style="background-color: lightgray;"><code>import course from './sample-module.js';<br>console.log(course);<br></code></pre>
+        
+        <hr>
+        <p><a href="../index.html">← Back to Home</a></p>
+        <script type="module" src="js-modules.js"></script>
+    </body>
+</html>
