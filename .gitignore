@@ -1,2 +1,4 @@
 
 /src/javascript/node_modules
+/src/javascript/typescript/dist
+src/javascript/package-lock.json

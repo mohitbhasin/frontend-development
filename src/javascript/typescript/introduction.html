@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Learning HTML and JavaScript</title>
+        <style>
+            pre {
+                background-color: lightgray;
+                padding: 5px;
+                width: max-content;
+                overflow-x: auto;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Introduction to TypeScript</h1>
+        <ul>
+            <li>Superset of JS</li>
+            <li>Every js code/file is already a valid TypeScript code/file.</li>
+            <li>It is statically typed language that compiles to plain javascript.</li>
+        </ul>
+        <h3>TypeScript setup</h3>
+        <ul>
+            <li>Install TypeScript compiler</li>
+            <pre><code>// Installing locally for the project
+// This will create node_modules directory, package.json and package-lock.json
+npm install --save-dev typescript</code></pre>
+            <li>Initialize config</li>
+            <pre><code>// Since typeScript is not installed globally, use npx to call tsc
+// This will create tsconfig.json file in which you specify how to organize compiled files (.map, .d.ts, etc).
+
+npx tsc --init</code></pre>
+            <li>Update tsconfig.json to sepatate the source(what you write) from distribution(what browser runs).</li>
+            <pre><code>"rootDir": "./src"
+"outDir": "./dist"
+"target": "ES6", // or higher(ES2020)
+"module": "ES6", // crucial
+
+// Make sure to create src/ directory and place .ts file in it.
+// The dis/ folder will be created automatically.
+</code></pre>
+            <li>Create and load the typescript module</li>
+            <pre><code><div style="color: red; font-style: italic;">// The script must be loaded as a module.
+// Point to the .js version of your typescript (usually in ./dist folder).</div>
+&ltscript type="module" src="../typescript/dist/introduction.js"&gt&lt/script&gt</code></pre>
+
+            <li>Start the compiler watch mode</li>
+            <pre><code>npx tsc -w</code></pre>
+        </ul>
+        <hr>
+		<p><a href="../index.html">← Back to Home</a></p>
+        <script type="module" src="../typescript/dist/introduction.js"></script>
+    </body>
+</html>
